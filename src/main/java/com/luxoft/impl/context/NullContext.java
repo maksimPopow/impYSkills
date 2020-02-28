@@ -1,4 +1,7 @@
-package com.luxoft;
+package com.luxoft.impl.context;
+
+import com.luxoft.interf.Chunk;
+import com.luxoft.interf.Context;
 
 import java.util.List;
 import java.util.stream.Collectors;

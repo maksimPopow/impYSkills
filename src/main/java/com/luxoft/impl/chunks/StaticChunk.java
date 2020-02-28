@@ -1,6 +1,9 @@
-package com.luxoft;
+package com.luxoft.impl.chunks;
 
-public class StaticChunk implements Chunk{
+import com.luxoft.ChunkType;
+import com.luxoft.interf.Chunk;
+
+public class StaticChunk implements Chunk {
     private final String value;
     private final ChunkType chunkType;
 

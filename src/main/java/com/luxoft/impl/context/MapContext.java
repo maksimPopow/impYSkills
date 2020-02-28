@@ -1,4 +1,9 @@
-package com.luxoft;
+package com.luxoft.impl.context;
+
+import com.luxoft.ChunkType;
+import com.luxoft.impl.chunks.KeyChunk;
+import com.luxoft.interf.Chunk;
+import com.luxoft.interf.Context;
 
 import java.util.HashMap;
 import java.util.List;

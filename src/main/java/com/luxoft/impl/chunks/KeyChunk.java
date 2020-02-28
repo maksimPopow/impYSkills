@@ -1,4 +1,7 @@
-package com.luxoft;
+package com.luxoft.impl.chunks;
+
+import com.luxoft.ChunkType;
+import com.luxoft.interf.Chunk;
 
 public class KeyChunk implements Chunk {
     private final String value;

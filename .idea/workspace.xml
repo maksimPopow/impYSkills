@@ -1,33 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dd031710-1b7d-4dba-9315-e263d2514b46" name="Default Changelist" comment="new updates">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/luxoft/ChunkType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/luxoft/exceptions/FormatException.java" afterDir="false" />
+    <list default="true" id="dd031710-1b7d-4dba-9315-e263d2514b46" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/5/45e758d404a9d854f9dc62513a97f04e814cfee9" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/luxoft/ArrayContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luxoft/ArrayContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/luxoft/Chunk.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luxoft/Chunk.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/luxoft/Context.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luxoft/Context.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/luxoft/ArrayContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luxoft/impl/chunks/context/ArrayContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/luxoft/Chunk.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luxoft/interf/Chunk.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/luxoft/Context.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luxoft/interf/Context.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/luxoft/Formatter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luxoft/Formatter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/luxoft/IndexedChunk.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luxoft/IndexedChunk.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/luxoft/KeyChunk.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luxoft/KeyChunk.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/luxoft/MainApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luxoft/MainApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/luxoft/MapContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luxoft/MapContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/luxoft/NullContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luxoft/NullContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/luxoft/StaticChunk.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luxoft/StaticChunk.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/luxoft/FormatterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/luxoft/FormatterTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/luxoft/Chunk.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/luxoft/Chunk.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/luxoft/Context.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/luxoft/Context.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/luxoft/Formatter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/luxoft/Formatter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/luxoft/IndexedChunk.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/luxoft/IndexedChunk.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/luxoft/KeyChunk.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/luxoft/KeyChunk.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/luxoft/MainApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/luxoft/MainApp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/luxoft/MapContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/luxoft/MapContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/luxoft/NullContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/luxoft/NullContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/luxoft/StaticChunk.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/luxoft/StaticChunk.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/luxoft/FormatterTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/luxoft/FormatterTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/luxoft/IndexedChunk.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luxoft/impl/chunks/IndexedChunk.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/luxoft/KeyChunk.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luxoft/impl/chunks/KeyChunk.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/luxoft/MapContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luxoft/impl/chunks/context/MapContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/luxoft/NullContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luxoft/impl/chunks/context/NullContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/luxoft/StaticChunk.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luxoft/impl/chunks/StaticChunk.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/luxoft/ArrayContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/luxoft/ArrayContext.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +94,7 @@
       <module name="formatter" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.luxoft.*" />
+          <option name="PATTERN" value="com.luxoft.interf.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -124,7 +110,7 @@
       <useClassPathOnly />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.luxoft.*" />
+          <option name="PATTERN" value="com.luxoft.interf.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -141,7 +127,7 @@
       <module name="formatter" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.luxoft.*" />
+          <option name="PATTERN" value="com.luxoft.interf.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -195,11 +181,21 @@
       <option name="presentableId" value="Default" />
       <updated>1582267758381</updated>
     </task>
+    <task id="LOCAL-00001" summary="new updates -v 1.3">
+      <created>1582896859836</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1582896859836</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="new updates" />
-    <option name="LAST_COMMIT_MESSAGE" value="new updates" />
+    <MESSAGE value="new updates -v 1.2" />
+    <MESSAGE value="new updates -v 1.3" />
+    <option name="LAST_COMMIT_MESSAGE" value="new updates -v 1.3" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2660" y="345" key="#BuildArtifactsBeforeRunChooser" timestamp="1582270087998">
@@ -224,15 +220,19 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="640" y="248" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1582807603853" />
+    <state x="756" y="379" width="407" height="288" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1582899171741">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="756" y="379" width="407" height="288" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1582899171741" />
     <state x="508" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1582809795371">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="508" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1582809795371" />
     <state x="2428" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1582621348925" />
-    <state x="614" y="114" width="1126" height="811" key="CommitChangelistDialog2" timestamp="1582896748133">
+    <state x="614" y="114" width="1126" height="811" key="CommitChangelistDialog2" timestamp="1582896858690">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="614" y="114" width="1126" height="811" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1582896748133" />
+    <state x="614" y="114" width="1126" height="811" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1582896858690" />
     <state x="2614" y="302" key="EnvironmentVariablesDialog" timestamp="1582268378155">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
@@ -241,25 +241,25 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2660" y="295" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1582268450976" />
-    <state width="1877" height="237" key="GridCell.Tab.0.bottom" timestamp="1582896834556">
+    <state width="1877" height="237" key="GridCell.Tab.0.bottom" timestamp="1582899225139">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="237" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1582896834556" />
+    <state width="1877" height="237" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1582899225139" />
     <state width="1877" height="237" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1582708310640" />
-    <state width="1877" height="237" key="GridCell.Tab.0.center" timestamp="1582896834556">
+    <state width="1877" height="237" key="GridCell.Tab.0.center" timestamp="1582899225138">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="237" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1582896834556" />
+    <state width="1877" height="237" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1582899225138" />
     <state width="1877" height="237" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1582708310640" />
-    <state width="1877" height="237" key="GridCell.Tab.0.left" timestamp="1582896834555">
+    <state width="1877" height="237" key="GridCell.Tab.0.left" timestamp="1582899225138">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="237" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1582896834555" />
+    <state width="1877" height="237" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1582899225138" />
     <state width="1877" height="237" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1582708310639" />
-    <state width="1877" height="237" key="GridCell.Tab.0.right" timestamp="1582896834556">
+    <state width="1877" height="237" key="GridCell.Tab.0.right" timestamp="1582899225138">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="237" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1582896834556" />
+    <state width="1877" height="237" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1582899225138" />
     <state width="1877" height="237" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1582708310640" />
     <state width="1877" height="279" key="GridCell.Tab.1.bottom" timestamp="1582887791036">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -290,6 +290,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="655" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1582881408849" />
+    <state x="769" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1582899571436">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="769" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1582899571436" />
     <state x="731" y="234" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1582887529707">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

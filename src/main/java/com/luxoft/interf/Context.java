@@ -1,4 +1,4 @@
-package com.luxoft;
+package com.luxoft.interf;
 
 @FunctionalInterface
 public interface Context{

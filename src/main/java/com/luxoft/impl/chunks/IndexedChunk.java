@@ -1,6 +1,9 @@
-package com.luxoft;
+package com.luxoft.impl.chunks;
 
-public class IndexedChunk implements Chunk{
+import com.luxoft.ChunkType;
+import com.luxoft.interf.Chunk;
+
+public class IndexedChunk implements Chunk {
     private final Integer value;
     private final ChunkType chunkType;
 
