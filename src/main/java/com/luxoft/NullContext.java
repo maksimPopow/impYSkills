@@ -12,7 +12,7 @@ public class NullContext implements Context {
 
     @Override
     public String format(Object... t) {
-        if (chunks.size() > 0)
+        if (!chunks.isEmpty())
             return chunks.stream().map(a -> a.getValue() + "").collect(Collectors.joining());
         else
             return "Строка некорректна: \n   1. Пустая строка; \n   2. Строка == null;" +

@@ -1,12 +1,18 @@
 package com.luxoft;
 
 public class IndexedChunk implements Chunk{
-    private Integer value;
+    private final Integer value;
+    private final ChunkType chunkType;
 
-    IndexedChunk(Integer value) {
+
+    public IndexedChunk(Integer value, ChunkType chunkType) {
         this.value = value;
+        this.chunkType = chunkType;
     }
 
+    public ChunkType getChunkType() {
+        return chunkType;
+    }
 
     @Override
     public Integer getValue() {

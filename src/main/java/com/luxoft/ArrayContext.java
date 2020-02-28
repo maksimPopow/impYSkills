@@ -10,19 +10,19 @@ public class ArrayContext implements Context {
     }
 
     @Override
-    public String format(Object[] objects) {
+    public String format(Object ... objects) {
         StringBuilder sb = new StringBuilder();
 
         if (objects != null && objects.length > 0) {
-            for (int i = 0; i < chunks.size(); i++) {
-                if (chunks.get(i) instanceof IndexedChunk) {
-                    IndexedChunk ch = (IndexedChunk) chunks.get(i);
+            for (Chunk chunk : chunks) {
+                if (chunk.getChunkType() == ChunkType.NUMERIC || chunk.getChunkType() == ChunkType.EMPTY) {
+                    IndexedChunk ch = (IndexedChunk) chunk;
                     if (ch.getValue() < objects.length) sb.append(objects[ch.getValue()]);
-                    else sb.append("");
-                } else sb.append(chunks.get(i).getValue());
+                    else sb.append("null");
+                } else sb.append(chunk.getValue());
             }
         }
 
-        return sb.toString();
+        return sb.toString().trim();
     }
 }

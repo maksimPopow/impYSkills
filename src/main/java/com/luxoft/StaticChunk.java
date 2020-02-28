@@ -2,9 +2,15 @@ package com.luxoft;
 
 public class StaticChunk implements Chunk{
     private final String value;
+    private final ChunkType chunkType;
 
-    StaticChunk(String value) {
+    public StaticChunk(String value, ChunkType chunkType) {
         this.value = value;
+        this.chunkType = chunkType;
+    }
+
+    public ChunkType getChunkType() {
+        return chunkType;
     }
 
     @Override

@@ -1,10 +1,16 @@
 package com.luxoft;
 
 public class KeyChunk implements Chunk {
-    private String value;
+    private final String value;
+    private final ChunkType chunkType;
 
-    KeyChunk(String value) {
+    public KeyChunk(String value, ChunkType chunkType) {
         this.value = value;
+        this.chunkType = chunkType;
+    }
+
+    public ChunkType getChunkType() {
+        return chunkType;
     }
 
     @Override

@@ -1,82 +1,107 @@
 package com.luxoft;
 
+import com.luxoft.exceptions.FormatException;
+
 import java.util.*;
 
 public class Formatter {
 
+    private Formatter() {
+    }
 
-    public static Context forArgs(String message) throws Exception {
-        int i;
-        int counter = 0;
-        boolean isEmpty = false;
-        boolean isNumeric = false;
-        boolean isString = false;
+
+    public static Context forArgs(String message) throws FormatException {
 
         List<Chunk> chunks = new ArrayList<>();
-        StringBuilder sb = new StringBuilder();
 
         if (message != null && !message.isEmpty()) {
 
-            if(!isCorrect(message)) return new NullContext(chunks);
+            if (!isCorrectString(message)) return new NullContext(chunks);
 
-            for (i = 0; i < message.length(); i++) {
+            chunks = stringSeparator(message, chunks);
+            
+            ChunkType chunkType = defineType(chunks);
 
-                char outPlHol = message.charAt(i);
-
-                if (outPlHol == '{') {
-                    if (sb.length() > 0)
-                        chunks.add(new StaticChunk(sb.toString()));
-
-                    sb.setLength(0);
-
-                    for (int j = i + 1; j < message.length(); j++) {
-
-                        char inPlHol = message.charAt(j);
-
-                        if (inPlHol == '}') {
-
-                            String str = sb.toString().trim();
-                            //Поиск первого цифрового значения в place holder'е
-                            if (!isNumeric) {
-                                isNumeric = isNumeric(str);
-                            }
-                            //Поиск первого пустого значения в place holder'е
-                            if (!isEmpty) {
-                                isEmpty = str.isEmpty();
-                            }
-                            //Поиск первого строкового значения в place holder'е
-                            if (!isString && !str.isEmpty()) {
-                                isString = !isNumeric(str);
-                            }
-
-                            if ((isNumeric && isEmpty) || (isEmpty && isString) || (isNumeric && isString)) {
-                                throw new Exception("Разные значения в place holder'ах");
-                            } else {
-                                if (isNumeric) chunks.add(new IndexedChunk(Integer.parseInt(str)));
-                                else if (isEmpty) chunks.add(new IndexedChunk(counter++));
-                                else if (isString) chunks.add(new KeyChunk(str));
-                            }
-                            sb.setLength(0);
-
-                            i = j;
-                            break;
-                        } else sb.append(inPlHol);
-                    }
-                } else sb.append(outPlHol);
-            }
-
-
-            if(sb.toString().trim().length() > 0) chunks.add(new StaticChunk(sb.toString()));
-            sb = null;
-            if (isNumeric || isEmpty) return new ArrayContext(chunks);
-
-            else if (isString) return new MapContext(chunks);
-
+            if(chunkType == ChunkType.EMPTY || chunkType == ChunkType.NUMERIC) return new ArrayContext(chunks);
+            else if(chunkType == ChunkType.KEY) return new MapContext(chunks);
+            else return new NullContext(chunks);
         }
         return new NullContext(chunks);
     }
 
-    private static boolean isNumeric(String sb) {
+    private static List<Chunk> stringSeparator(String message, List<Chunk> chunks) {
+        int i;
+        int counter = 0;
+
+        StringBuilder sb = new StringBuilder();
+
+        for (i = 0; i < message.length(); i++) {
+
+            char outPlHol = message.charAt(i);
+
+            if (outPlHol == '{') {
+                if (sb.length() > 0)
+                    chunks.add(new StaticChunk(sb.toString(), ChunkType.STRING));
+                sb.setLength(0);
+
+                for (int j = i + 1; j < message.length(); j++) {
+
+                    char inPlHol = message.charAt(j);
+
+                    if (inPlHol == '}') {
+                        String str = sb.toString().trim();
+
+
+//                      надо заменить как то условный оператор вызовом метода
+                        if (str.isEmpty()) chunks.add(chunkHelper(str, counter++));
+                        else chunks.add(chunkHelper(str, -1));
+
+                        sb.setLength(0);
+
+                        i = j;
+                        break;
+                    } else sb.append(inPlHol);
+                }
+            } else sb.append(outPlHol);
+        }
+
+        if (sb.toString().trim().length() > 0) chunks.add(new StaticChunk(sb.toString(), ChunkType.STRING));
+
+        return chunks;
+    }
+
+    private static Chunk chunkHelper(String subStr, int index) {
+        if (isNumeric(subStr)) return new IndexedChunk(Integer.parseInt(subStr), ChunkType.NUMERIC);
+        else if (index != -1) return new IndexedChunk(index, ChunkType.EMPTY);
+        else return new KeyChunk(subStr, ChunkType.KEY);
+    }
+
+    private static ChunkType defineType(List<Chunk> chunks) throws FormatException {
+        boolean isKey = false;
+        boolean isNumeric = false;
+        boolean isEmpty = false;
+        ChunkType chunkType = ChunkType.STRING;
+        
+        for (Chunk chunk : chunks) {
+            if (chunk.getChunkType() == ChunkType.EMPTY) {
+                isEmpty = true;
+                chunkType = ChunkType.EMPTY;
+            } else if (chunk.getChunkType() == ChunkType.NUMERIC) {
+                isNumeric = true;
+                chunkType = ChunkType.NUMERIC;
+            } else if (chunk.getChunkType() == ChunkType.KEY) {
+                isKey = true;
+                chunkType = ChunkType.KEY;
+            }
+        }
+
+        if ((isEmpty && isKey) || (isEmpty && isNumeric) || (isNumeric && isKey))
+            throw new FormatException("Разные типы аргументов в placeholder'ах");
+
+        return chunkType;
+    }
+
+     private static boolean isNumeric(String sb) {
         try {
             Integer.parseInt(sb);
         } catch (NumberFormatException e) {
@@ -85,20 +110,19 @@ public class Formatter {
         return true;
     }
 
-    private static boolean isCorrect(String str) {
+
+    private static boolean isCorrectString(String str) {
         Deque<Character> stack = new ArrayDeque<>();
         boolean isTrue = true;
         for (int i = 0; i < str.length(); i++) {
             char ch = str.charAt(i);
-            switch (ch) {
-                case '{':
-                    stack.push(ch);
-                    break;
-                case '}':
-                    if (stack.isEmpty() || stack.peek() != '{') {
-                        isTrue = false;
-                        break;
-                    } else stack.pop();
+            if (ch == '{') {
+                stack.push(ch);
+            }
+            if (ch == '}') {
+                if (stack.isEmpty() || stack.peek() != '{') {
+                    isTrue = false;
+                } else stack.pop();
             }
         }
         if (!stack.isEmpty()) isTrue = false;
